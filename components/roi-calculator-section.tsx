@@ -1,3 +1,4 @@
+// ...existing code...
 "use client"
 
 import { useState, useEffect } from "react"
@@ -74,7 +75,7 @@ export function ROICalculatorSection() {
   const currentLeads = Math.round((inputs.monthlyVisitors * inputs.currentConversionRate) / 100)
   const currentRevenue = currentLeads * inputs.averageOrderValue
 
-  // Improved metrics with AI chatbot
+  // Improved metrics after applying Utopia's digital & marketing improvements
   const newConversionRate = inputs.currentConversionRate * (1 + improvements.conversion / 100)
   const newLeads = Math.round((inputs.monthlyVisitors * newConversionRate) / 100)
   const newRevenue = newLeads * inputs.averageOrderValue
@@ -82,7 +83,7 @@ export function ROICalculatorSection() {
   // Gains
   const additionalLeads = newLeads - currentLeads
   const additionalRevenue = newRevenue - currentRevenue
-  const revenueIncrease = ((newRevenue - currentRevenue) / currentRevenue) * 100
+  const revenueIncrease = currentRevenue > 0 ? ((newRevenue - currentRevenue) / currentRevenue) * 100 : 0
 
   return (
     <section id="roi-calculator" className="py-16 md:py-20 px-4 relative">
@@ -93,18 +94,18 @@ export function ROICalculatorSection() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-6">
             <TrendingUp className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-white/80">ROI Calculator</span>
+            <span className="text-sm font-medium text-white/80">Growth Calculator</span>
           </div>
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 text-balance">
             See your potential{" "}
-            <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-white to-gray-300 bg-clip-text text-transparent">
               revenue growth
             </span>
           </h2>
 
           <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto text-balance">
-            Calculate how much additional revenue your business could generate with AI-powered customer engagement
+            Calculate how much additional revenue your business could generate with digital and marketing improvements from Utopia Marketing Solution
           </p>
         </div>
 
@@ -235,7 +236,7 @@ export function ROICalculatorSection() {
                       <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
                       <div>
                         <p className="text-sm text-gray-300">
-                          <span className="font-medium text-white">Response time:</span> AI chatbots respond{" "}
+                          <span className="font-medium text-white">Response time:</span> Our solutions help teams respond{" "}
                           {businessConfig.response}% faster than traditional methods
                         </p>
                       </div>
@@ -245,7 +246,7 @@ export function ROICalculatorSection() {
                       <div>
                         <p className="text-sm text-gray-300">
                           <span className="font-medium text-white">Customer satisfaction:</span> Increases by{" "}
-                          {businessConfig.satisfaction}% with 24/7 AI support
+                          {businessConfig.satisfaction}% with improved engagement and support
                         </p>
                       </div>
                     </div>
@@ -261,7 +262,7 @@ export function ROICalculatorSection() {
           >
             <Card className="p-6 md:p-8 bg-[radial-gradient(35%_128px_at_50%_0%,theme(backgroundColor.white/15%),theme(backgroundColor.white/5%))] border-white/20 backdrop-blur-sm shadow-2xl h-full flex flex-col">
               <h3 className="text-xl md:text-2xl font-semibold text-white mb-6 md:mb-8">
-                Your Potential with Cliste AI
+                Your Potential with Utopia
               </h3>
 
               <div className="space-y-6 flex-1">
@@ -273,7 +274,7 @@ export function ROICalculatorSection() {
                     <div className="text-xs text-gray-400">leads/month</div>
                   </div>
                   <div className="text-center p-3 md:p-4 rounded-lg bg-white/10 border border-white/20">
-                    <div className="text-xs md:text-sm text-gray-300 mb-1">With Cliste</div>
+                    <div className="text-xs md:text-sm text-gray-300 mb-1">With Utopia</div>
                     <div className="text-xl md:text-2xl font-bold text-white">{newLeads}</div>
                     <div className="text-xs text-gray-300">leads/month</div>
                   </div>
@@ -342,3 +343,4 @@ export function ROICalculatorSection() {
     </section>
   )
 }
+// ...existing code...

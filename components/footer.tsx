@@ -18,15 +18,6 @@ interface FooterSection {
 
 const footerLinks: FooterSection[] = [
   {
-    label: "Product",
-    links: [
-      { title: "Features", href: "/features" },
-      { title: "AI Team", href: "/ai-team" },
-      { title: "ROI Calculator", href: "/roi-calculator" },
-      { title: "Integration", href: "/integration" },
-    ],
-  },
-  {
     label: "Company",
     links: [
       { title: "About Us", href: "/about" },
@@ -38,7 +29,6 @@ const footerLinks: FooterSection[] = [
   {
     label: "Resources",
     links: [
-      { title: "Blog", href: "/blog" },
       { title: "Case Studies", href: "/case-studies" },
       { title: "Documentation", href: "/docs" },
       { title: "Support", href: "/support" },
@@ -64,7 +54,7 @@ export function Footer() {
         <AnimatedContainer className="space-y-4">
           <Image src="/images/cliste-logo.png" alt="Cliste Logo" width={64} height={64} className="size-16" />
           <div className="text-muted-foreground mt-8 text-sm md:mt-0 md:block hidden">
-            <p>© {new Date().getFullYear()} Cliste. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Utopia. All rights reserved.</p>
           </div>
         </AnimatedContainer>
 
@@ -90,15 +80,6 @@ export function Footer() {
             </AnimatedContainer>
           ))}
         </div>
-      </div>
-
-      <div className="md:hidden mt-8 text-center space-y-2">
-        <p className="text-muted-foreground text-sm">© {new Date().getFullYear()} Cliste. All rights reserved.</p>
-        <p className="text-muted-foreground text-xs">Web Development by Humexa</p>
-      </div>
-
-      <div className="hidden md:block mt-8 pt-6 border-t border-foreground/10 w-full">
-        <p className="text-muted-foreground text-xs text-center">Web Development by Humexa</p>
       </div>
     </footer>
   )
