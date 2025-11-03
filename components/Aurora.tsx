@@ -111,7 +111,7 @@ void main() {
 }
 `
 
-export default function Aurora(props) {
+export default function Aurora(props:any) {
   const { colorStops = ["#5227FF", "#7cff67", "#5227FF"], amplitude = 1.0, blend = 0.5 } = props
   const propsRef = useRef(props)
   propsRef.current = props
@@ -133,7 +133,7 @@ export default function Aurora(props) {
     gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA)
     gl.canvas.style.backgroundColor = "transparent"
 
-    let program
+    let program:any;
 
     function resize() {
       const width = window.innerWidth
@@ -150,7 +150,7 @@ export default function Aurora(props) {
       delete geometry.attributes.uv
     }
 
-    const colorStopsArray = colorStops.map((hex) => {
+    const colorStopsArray = colorStops.map((hex:any) => {
       const c = new Color(hex)
       return [c.r, c.g, c.b]
     })

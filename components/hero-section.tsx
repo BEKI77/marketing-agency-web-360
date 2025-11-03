@@ -1,5 +1,8 @@
+'use Client'
 import { Button } from "@/components/ui/button"
 import RotatingText from "./RotatingText"
+import { redirect } from "next/navigation"
+import Link from "next/link"
 
 const ArrowRight = () => (
   <svg
@@ -12,30 +15,18 @@ const ArrowRight = () => (
   </svg>
 )
 
-const Play = () => (
-  <svg
-    className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h1m4 0h1m-6-8h8a2 2 0 012 2v8a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2z"
-    />
-  </svg>
-)
-
 export function HeroSection() {
+  const handleRedirect  = ()=>{
+    redirect('/contacts');
+  }
+
   return (
     <section className="min-h-screen flex items-center justify-center px-4 py-20 relative">
       <div className="max-w-4xl mx-auto text-center relative z-10 animate-fade-in-hero">
         {/* Badge */}
         <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-medium mb-8 mt-12 animate-fade-in-badge">
           <span className="w-2 h-2 bg-white/60 rounded-full mr-2 animate-pulse"></span>
-            Business Automation for Enterprise
+            Utopia Marketing Solution — Our Story
         </div>
 
         {/* Main Heading */}
@@ -59,87 +50,30 @@ export function HeroSection() {
           </span>
         </h1>
 
-        {/* Subheading */}
-        <p className="text-base sm:text-xl md:text-2xl text-white text-balance max-w-sm sm:max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed px-4 sm:px-0 animate-fade-in-subheading font-light">
-          Cliste helps Irish businesses save time and boost revenue with smart chat, workflows and automations, fully
-          managed for you.
+        {/* Main Heading */}
+        <h1 className="text-2xl font-normal text-balance mb-6 animate-fade-in-heading">
+          Bridge Tradition &amp; Digital Growth
+        </h1>
+
+        {/* Subheading (concise) */}
+        <p className="text-base sm:text-lg text-white text-balance max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed px-4 sm:px-0 animate-fade-in-subheading font-light">
+          We empower Ethiopian businesses by combining modern digital systems with traditional marketing to deliver measurable impact.
         </p>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 sm:mb-16 animate-fade-in-buttons">
+          <Link href={'/contacts'}>
           <Button
             size="lg"
             className="bg-white text-black rounded-full px-8 py-4 text-lg font-medium transition-all duration-300 hover:bg-gray-50 hover:scale-105 hover:shadow-lg group cursor-pointer relative overflow-hidden"
           >
-            Start Automating
+            Get in touch
             <ArrowRight />
           </Button>
-
-          <Button
-            variant="outline"
-            size="lg"
-            className="rounded-full px-8 py-4 text-lg font-medium border-border hover:bg-accent transition-all duration-200 hover:scale-105 group bg-transparent cursor-pointer"
-          >
-            <Play />
-            Watch Demo
-          </Button>
+          
+          </Link>
         </div>
 
-        {/* Trust Indicators */}
-        <div className="text-center px-4 hidden sm:block overflow-hidden animate-fade-in-trust">
-          <p className="text-sm text-white mb-6">Trusted by innovative companies worldwide</p>
-          <div className="relative overflow-hidden w-full max-w-4xl mx-auto">
-            <div className="flex items-center gap-8 opacity-60 hover:opacity-80 transition-all duration-500 animate-slide-left">
-              {/* <div className="flex items-center gap-8 whitespace-nowrap">
-                <div className="text-base sm:text-lg font-semibold">TechCorp</div>
-                <div className="text-base sm:text-lg font-semibold">InnovateLab</div>
-                <div className="text-base sm:text-lg font-semibold">FutureScale</div>
-                <div className="text-base sm:text-lg font-semibold">AutoFlow</div>
-                <div className="text-base sm:text-lg font-semibold">eScale</div>
-                <div className="text-base sm:text-lg font-semibold">DataFlow</div>
-              </div> */}
-              {/* Duplicate for seamless loop */}
-              {/* <div className="flex items-center gap-8 whitespace-nowrap">
-                <div className="text-base sm:text-lg font-semibold">TechCorp</div>
-                <div className="text-base sm:text-lg font-semibold">InnovateLab</div>
-                <div className="text-base sm:text-lg font-semibold">FutureScale</div>
-                <div className="text-base sm:text-lg font-semibold">AutoFlow</div>
-                <div className="text-base sm:text-lg font-semibold">eScale</div>
-                <div className="text-base sm:text-lg font-semibold">DataFlow</div>
-              </div> */}
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile Trust Indicators */}
-        <div className="text-center px-4 mb-8 sm:hidden overflow-hidden animate-fade-in-trust">
-          <p className="text-sm text-white mb-6">Trusted by innovative companies</p>
-          <div className="relative overflow-hidden w-full max-w-sm mx-auto">
-            {/* Left blur fade */}
-            <div className="absolute left-0 top-0 w-8 h-full bg-linear-to-r from-black to-transparent z-10 pointer-events-none"></div>
-            {/* Right blur fade */}
-            <div className="absolute right-0 top-0 w-8 h-full bg-linear-to-l from-black to-transparent z-10 pointer-events-none"></div>
-            <div className="flex items-center gap-6 opacity-60 animate-slide-left-mobile">
-              <div className="flex items-center gap-6 whitespace-nowrap">
-                <div className="text-sm font-semibold">TechCorp</div>
-                <div className="text-sm font-semibold">InnovateLab</div>
-                <div className="text-sm font-semibold">FutureScale</div>
-                <div className="text-sm font-semibold">AutoFlow</div>
-                <div className="text-sm font-semibold">eScale</div>
-                <div className="text-sm font-semibold">DataFlow</div>
-              </div>
-              {/* Duplicate for seamless loop */}
-              <div className="flex items-center gap-6 whitespace-nowrap">
-                <div className="text-sm font-semibold">TechCorp</div>
-                <div className="text-sm font-semibold">InnovateLab</div>
-                <div className="text-sm font-semibold">FutureScale</div>
-                <div className="text-sm font-semibold">AutoFlow</div>
-                <div className="text-sm font-semibold">eScale</div>
-                <div className="text-sm font-semibold">DataFlow</div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   )

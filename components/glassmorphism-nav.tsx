@@ -65,9 +65,7 @@ export function GlassmorphismNav() {
   }
 
   const scrollToSection = (href: string) => {
-    if (href.startsWith("/")) {
-      return
-    }
+  
 
     console.log("[v0] Attempting to scroll to:", href)
     const element = document.querySelector(href)
@@ -89,9 +87,7 @@ export function GlassmorphismNav() {
         top: targetPosition,
         behavior: "smooth",
       })
-    } else {
-      console.log("[v0] Element not found for:", href)
-    }
+    } 
     setIsOpen(false)
   }
 

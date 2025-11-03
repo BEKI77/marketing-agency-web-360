@@ -19,7 +19,7 @@ export default function HomePage() {
           <HeroSection />
           <ProblemSolutionSection />
           <FeaturesSection />
-          <TestimonialsSection />
+          {/* <TestimonialsSection /> */}
           <ROICalculatorSection />
           {/* <CTASection /> */}
           <Footer />
